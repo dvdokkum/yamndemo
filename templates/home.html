@@ -1,0 +1,20 @@
+<!doctype html>
+<title>Upload new File</title>
+<h1>Upload new File</h1>
+<form method=post action="/upload" enctype=multipart/form-data>
+  <input type=file name=file>
+  <input type=submit value=Upload>
+</form>
+<br>
+<form onsubmit="return go_to_result()">
+<input type="text" name="filename" id="n">
+<input type="submit" value="process">    
+</form>
+
+<script>
+    function go_to_result() {
+        n = document.querySelector('#n').value;
+        url = "/result?n=" + n
+        window.open(url)
+    }
+</script>
